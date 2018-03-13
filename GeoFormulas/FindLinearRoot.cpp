@@ -36,7 +36,7 @@ namespace GeoCalcs {
         {
             root = std::numeric_limits<double>::signaling_NaN();
         }
-        else if (errArray[0] == errArray[1])
+        else if (errArray[0] >= errArray[1] - DBL_EPSILON && errArray[0] <= errArray[1] + DBL_EPSILON)
         {
             if (IsNearZero(errArray[0] - errArray[1], 1e-15))
             {
