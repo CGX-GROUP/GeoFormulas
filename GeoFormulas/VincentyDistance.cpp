@@ -92,6 +92,9 @@ namespace GeoCalcs {
                          (sigma + C * sinSigma * (cos2SigmaM + C * cosSigma * (-1.0 + 2.0 * cos2SigmaM * cos2SigmaM)));
         }
         while (fabs(lambda - lambdaP) > kEps && ++iterLimit < 40);
+        
+        if(iterLimit == 40)
+			return false;
 
         double uSq = cosSqAlpha * (kSemiMajorAxis * kSemiMajorAxis - kSemiMinorAxis * kSemiMinorAxis) /
                      (kSemiMinorAxis * kSemiMinorAxis);
