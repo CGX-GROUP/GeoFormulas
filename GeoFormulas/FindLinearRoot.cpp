@@ -23,6 +23,10 @@
 
 #include "Conversions.h"
 #include "GeoFormulas.h"
+#include <limits>
+
+constexpr double DOUBLE_EPSILON = std::numeric_limits<double>::epsilon();
+
 
 using namespace std;
 
@@ -36,7 +40,7 @@ namespace GeoCalcs {
         {
             root = std::numeric_limits<double>::signaling_NaN();
         }
-        else if (errArray[0] >= errArray[1] - DBL_EPSILON && errArray[0] <= errArray[1] + DBL_EPSILON)
+        else if (errArray[0] >= errArray[1] - DOUBLE_EPSILON && errArray[0] <= errArray[1] + DOUBLE_EPSILON)
         {
             if (IsNearZero(errArray[0] - errArray[1], 1e-15))
             {

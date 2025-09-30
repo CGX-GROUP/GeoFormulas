@@ -28,6 +28,7 @@
 #include "Conversions.h"
 #include "GeoFormulas.h"
 #include <regex>
+#include <string.h>
 
 
 using namespace GeoCalcs;
